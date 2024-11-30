@@ -1,14 +1,12 @@
 {
-  "appId": "ionic.bakopedia",
-  "appName": "Bakopedia",
+  "appId": "com.yourcompany.bakeopedia",
+  "appName": "Bakeopedia",
   "webDir": "dist",
   "bundledWebRuntime": false,
   "plugins": {
-    "CapacitorHttp": {
-      "enabled": true
-    },
-    "WebView": {
-      "disableCache": true
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "launchAutoHide": false
     }
   }
 }

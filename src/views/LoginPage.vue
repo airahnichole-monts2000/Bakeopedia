@@ -3,7 +3,7 @@
     <ion-content :fullscreen="true" class="ion-padding">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large"></ion-title>
+          <ion-title size="large">Login</ion-title>
         </ion-toolbar>
       </ion-header>
 
@@ -14,10 +14,11 @@
         <!-- Username TextField -->
         <div class="form-group">
           <ion-item class="custom-input">
+            <ion-label position="floating">Username</ion-label>
             <ion-input
-              class="form-control no-border"
+              class="form-control"
               type="text"
-              placeholder="Username"
+              placeholder="Enter your username"
             ></ion-input>
           </ion-item>
         </div>
@@ -25,10 +26,11 @@
         <!-- Password TextField -->
         <div class="form-group">
           <ion-item class="custom-input">
+            <ion-label position="floating">Password</ion-label>
             <ion-input
-              class="form-control no-border"
+              class="form-control"
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password"
             ></ion-input>
           </ion-item>
         </div>
@@ -41,7 +43,7 @@
 
         <!-- Register Text -->
         <p>
-          If you don't have an account
+          If you don't have an account,
           <ion-text color="primary" class="clickable" @click="goToRegister">
             Click here to register.
           </ion-text>
@@ -49,7 +51,7 @@
 
         <!-- Login Button -->
         <div class="form-group">
-          <ion-button class="custom-button" @click="login">Bake In!</ion-button>
+          <ion-button class="custom-button" @click="login">Login</ion-button>
         </div>
       </div>
     </ion-content>
@@ -115,28 +117,25 @@ ion-content {
   margin-bottom: 20px;
 }
 
-ion-label {
-  margin-left: 0px; /* Remove any left margin */
-  padding-left: 0px; /* Remove any padding */
-  color: #ffffff; /* Set the label color to white (if you need it to be white) */
-}
-
-ion-input {
-  --background: transparent; /* Remove any default background */
-  --border-radius: 20px; /* Optional: round the corners */
-  --padding-start: 15px; /* Add some padding inside the input box */
-  --padding-end: 15px; /* Ensure the padding on both sides */
-  --border-color: transparent; /* Make the border transparent if you don't want it */
-}
-
-ion-item {
-  --background: transparent; /* Ensure the ion-item background is transparent */
-  --border-color: transparent; /* Make border color transparent */
+/* Custom input style */
+.custom-input {
+  --background: white;
+  --border-radius: 25px;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --min-height: 45px;
+  --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
 }
 
 .custom-input ion-label {
   color: #555;
   font-size: 0.6rem;
+}
+
+.custom-input ion-input {
+  font-size: 1rem;
+  color: #000;
 }
 
 /* Make the clickable text stand out */

@@ -4,12 +4,7 @@
       <div class="splash-container">
         <div id="container">
           <div class="d-flex flex-column align-items-center text-center">
-            <ion-img
-              src="@/assets/icon_app.png"
-              alt="logo"
-              class="img-fluid mb-3"
-              style="max-width: 250px"
-            />
+            <ion-img src="src/assets/images/icons/ICON.PNG" alt="logo" class="img-fluid mb-3" style= "max-width: 250px"/>
             <p class="fs-1 fw-bold custom-text">BAKEOPEDIA</p>
           </div>
         </div>
@@ -19,55 +14,57 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from "vue-router";
+  import { useRouter } from 'vue-router';
 
-// Use Vue Router for navigation
-const router = useRouter();
+  // Use Vue Router for navigation
+  const router = useRouter();
 
-setTimeout(() => {
-  router.push("/login"); // Navigate to the login page
-}, 3000);
+  setTimeout(() => {
+    router.push('/login'); // Navigate to the login page
+  }, 3000);
 </script>
 
 <style scoped>
-ion-content {
-  --background: #68005a !important;
-}
+  ion-content{
+    --background: #68005A !important;
+  }
 
-#container p {
-  font-family: "Playfair Display", serif;
-  font-size: 46px !important; /* Adjust size as needed */
-  color: #ffffff; /* Change color if needed */
-}
+  #container p {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px !important; /* Adjust size as needed */
+    color: #ffffff; /* Change color if needed */
+  }
 
-#container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  #container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
 
-#container a {
-  text-decoration: none;
-}
+  #container a {
+    text-decoration: none;
+  }
 
-ion-img {
-  display: block !important;
-  visibility: visible !important;
-}
+  .custom-img {
+    width: 300px;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+  }
 
-.splash-container {
+
+  .splash-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
-}
+  }
 </style>

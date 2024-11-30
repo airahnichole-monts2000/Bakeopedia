@@ -3,7 +3,7 @@
     <ion-content :fullscreen="true" class="ion-padding">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large"></ion-title>
+          <ion-title size="large">Register</ion-title>
         </ion-toolbar>
       </ion-header>
 
@@ -14,8 +14,9 @@
         <!-- Name TextField -->
         <div class="form-group">
           <ion-item class="custom-input">
+            <ion-label position="floating">Name</ion-label>
             <ion-input
-              class="form-control no-border"
+              class="form-control"
               type="text"
               placeholder="Enter your name"
             ></ion-input>
@@ -25,8 +26,9 @@
         <!-- Username TextField -->
         <div class="form-group">
           <ion-item class="custom-input">
+            <ion-label position="floating">Username</ion-label>
             <ion-input
-              class="form-control no-border"
+              class="form-control"
               type="text"
               placeholder="Enter your username"
             ></ion-input>
@@ -36,8 +38,9 @@
         <!-- Email TextField -->
         <div class="form-group">
           <ion-item class="custom-input">
+            <ion-label position="floating">Email</ion-label>
             <ion-input
-              class="form-control no-border"
+              class="form-control"
               type="email"
               placeholder="Enter your email"
             ></ion-input>
@@ -47,8 +50,9 @@
         <!-- Password TextField -->
         <div class="form-group">
           <ion-item class="custom-input">
+            <ion-label position="floating">Password</ion-label>
             <ion-input
-              class="form-control no-border"
+              class="form-control"
               type="password"
               placeholder="Enter your password"
             ></ion-input>
@@ -58,8 +62,9 @@
         <!-- Repeat Password TextField -->
         <div class="form-group">
           <ion-item class="custom-input">
+            <ion-label position="floating">Repeat Password</ion-label>
             <ion-input
-              class="form-control no-border"
+              class="form-control"
               type="password"
               placeholder="Repeat your password"
             ></ion-input>
@@ -69,13 +74,13 @@
         <!-- Terms and Conditions -->
         <div class="form-group terms-condition">
           <ion-checkbox class="custom-checkbox"></ion-checkbox>
-          <ion-label>Agree Terms and Condition</ion-label>
+          <ion-label>Agree to terms and conditions</ion-label>
         </div>
 
         <!-- Register Button -->
         <div class="form-group">
           <ion-button class="custom-button" @click="register"
-            >Whisk Your Way In!</ion-button
+            >Register</ion-button
           >
         </div>
 
@@ -161,28 +166,25 @@ ion-content {
   margin-bottom: 20px;
 }
 
-ion-label {
-  margin-left: 0px; /* Remove any left margin */
-  padding-left: 0px; /* Remove any padding */
-  color: #ffffff; /* Set the label color to white (if you need it to be white) */
-}
-
-ion-input {
-  --background: transparent; /* Remove any default background */
-  --border-radius: 20px; /* Optional: round the corners */
-  --padding-start: 15px; /* Add some padding inside the input box */
-  --padding-end: 15px; /* Ensure the padding on both sides */
-  --border-color: transparent; /* Make the border transparent if you don't want it */
-}
-
-ion-item {
-  --background: transparent; /* Ensure the ion-item background is transparent */
-  --border-color: transparent; /* Make border color transparent */
+/* Custom input style */
+.custom-input {
+  --background: white;
+  --border-radius: 25px;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --min-height: 45px;
+  --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
 }
 
 .custom-input ion-label {
   color: #555;
   font-size: 0.6rem;
+}
+
+.custom-input ion-input {
+  font-size: 1rem;
+  color: #000;
 }
 
 /* Make the clickable text stand out */
