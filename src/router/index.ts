@@ -1,37 +1,43 @@
-import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
-import HomePage from '../views/HomePage.vue';
-import LoginPage from '../views/LoginPage.vue';
-import RegPage from '../views/RegPage.vue';
+import { createRouter, createWebHistory } from "@ionic/vue-router";
+import { RouteRecordRaw } from "vue-router";
+
+import HomePage from "../views/HomePage.vue";
+import LoginPage from "../views/LoginPage.vue";
+import RegPage from "../views/RegPage.vue";
+import DashBoard from "../views/DashBoard.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    redirect: '/home'
+    path: "/",
+    redirect: "/home",
   },
   {
-    path: '/home',
-    name: 'Home',
+    path: "/home",
+    name: "Home",
     component: HomePage,
   },
   {
-    path: '/login',
+    path: "/login",
     component: LoginPage,
     beforeEnter: (to, from, next) => {
       // Reset state or perform any necessary cleanup before entering the page
       next();
-    }
+    },
   },
   {
-    path: '/register',
+    path: "/register",
     component: RegPage,
     beforeEnter: (to, from, next) => {
       // Reset state or perform any necessary cleanup before entering the page
       next();
-    }
+    },
   },
-]
-
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    component: DashBoard,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
