@@ -1,0 +1,12 @@
+{
+  "appId": "com.yourcompany.bakeopedia",
+  "appName": "Bakeopedia",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "launchAutoHide": false
+    }
+  }
+}
