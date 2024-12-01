@@ -19,6 +19,7 @@
               class="form-control"
               type="text"
               placeholder="Enter your name"
+              v-model="name"
             ></ion-input>
           </ion-item>
         </div>
@@ -31,6 +32,7 @@
               class="form-control"
               type="text"
               placeholder="Enter your username"
+              v-model="username"
             ></ion-input>
           </ion-item>
         </div>
@@ -43,6 +45,7 @@
               class="form-control"
               type="email"
               placeholder="Enter your email"
+              v-model="email"
             ></ion-input>
           </ion-item>
         </div>
@@ -55,6 +58,7 @@
               class="form-control"
               type="password"
               placeholder="Enter your password"
+              v-model="password"
             ></ion-input>
           </ion-item>
         </div>
@@ -67,6 +71,7 @@
               class="form-control"
               type="password"
               placeholder="Repeat your password"
+              v-model="confirmPassword"
             ></ion-input>
           </ion-item>
         </div>
@@ -83,6 +88,11 @@
             >Register</ion-button
           >
         </div>
+
+        <!-- Warning Message -->
+        <p v-if="warningMessage" class="warning-message">
+          {{ warningMessage }}
+        </p>
 
         <!-- Already have an account text -->
         <p>
@@ -108,6 +118,7 @@ const username = ref("");
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
+const warningMessage = ref(""); // Warning message for failed registration
 
 // Simulate a registration process
 const register = () => {
@@ -125,7 +136,8 @@ const register = () => {
     // Redirect to the login page after registration
     router.push("/login");
   } else {
-    alert("Please fill in all fields and make sure passwords match.");
+    warningMessage.value =
+      "Please fill in all fields and make sure passwords match.";
   }
 };
 
@@ -221,5 +233,13 @@ ion-content {
   font-weight: bold;
   font-size: 1rem;
   width: 100%;
+}
+
+/* Warning message style */
+.warning-message {
+  color: #f8c8d2;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 12px;
 }
 </style>

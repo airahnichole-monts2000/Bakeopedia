@@ -2,9 +2,7 @@
   <ion-page>
     <ion-content :fullscreen="true" class="ion-padding">
       <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Login</ion-title>
-        </ion-toolbar>
+        <ion-toolbar> </ion-toolbar>
       </ion-header>
 
       <!-- Main container -->
@@ -14,8 +12,8 @@
         <!-- Username TextField -->
         <div class="form-group">
           <ion-item class="custom-input">
-            <ion-label position="floating">Username</ion-label>
             <ion-input
+              v-model="username"
               class="form-control"
               type="text"
               placeholder="Enter your username"
@@ -26,8 +24,8 @@
         <!-- Password TextField -->
         <div class="form-group">
           <ion-item class="custom-input">
-            <ion-label position="floating">Password</ion-label>
             <ion-input
+              v-model="password"
               class="form-control"
               type="password"
               placeholder="Enter your password"
@@ -53,6 +51,9 @@
         <div class="form-group">
           <ion-button class="custom-button" @click="login">Login</ion-button>
         </div>
+
+        <!-- Warning Message (if needed) -->
+        <p v-if="warningMessage" class="warning-text">{{ warningMessage }}</p>
       </div>
     </ion-content>
   </ion-page>
@@ -67,17 +68,20 @@ const router = useRouter();
 // Define reactive variables for username and password
 const username = ref("");
 const password = ref("");
+const warningMessage = ref(""); // Warning message for failed login
 
-// Simulate a login check (replace with real login logic)
+// Simulate a login check (remove validation for now)
 const login = () => {
-  // Check if username and password are entered
-  if (username.value && password.value) {
-    // Simulate successful login and navigate to the dashboard
-    router.push("/dashboard"); // Redirect to the dashboard
-  } else {
-    console.log("Please enter valid credentials.");
-    alert("Please enter both username and password.");
-  }
+  // Commented out validation logic to bypass warning
+  // if (username.value.trim() !== "" && password.value.trim() !== "") {
+  //   console.log("Login successful!");
+  //   router.push("/dashboard"); // Redirect to the dashboard
+  // } else {
+  //   warningMessage.value = "Please enter both username and password.";
+  // }
+
+  // For now, just proceed to dashboard without validation
+  router.push("/dashboard");
 };
 
 // Navigate to the Register page
@@ -172,5 +176,11 @@ ion-content {
   font-weight: bold;
   font-size: 1rem;
   width: 100%;
+}
+
+.warning-text {
+  color: lightpink;
+  font-size: 0.8rem;
+  margin-top: 10px;
 }
 </style>
